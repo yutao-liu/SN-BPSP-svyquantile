@@ -4,6 +4,8 @@
 #
 # Author: Yutao Liu
 #
+# Date: 10/03/2017
+#
 # R version: 3.3.2
 ###########################################################
 
@@ -83,7 +85,8 @@ summary(popu)
 ## ------- Simulaton Setting: Transformation and Model Options ---
 
 transfms <- c('sqrt', 'sqrt') # c('none', 'logit', 'sqrt', 'log')
-mod <- 'SN-B2PSP-uniform' # c('SN-B2PSP', 'SN-B2PSP-cauchy', 'SN-B2PSP-uniform', 'SN-B2PSP-omega', 'SN-poly', 'SN-poly-cauchy', 'SN-poly-uniform')  
+mod <- 'SN-B2PSP-uniform' # c('SN-B2PSP', 'SN-B2PSP-cauchy', 'SN-B2PSP-uniform', 'SN-B2PSP-omega', 'SN-poly', 'SN-poly-cauchy',
+                          #   'SN-poly-uniform')  
 
 # mod <- 'SN-B2PSP-uniform'
 
@@ -104,7 +107,17 @@ seeds <- sample( ( (taskid - 1)*1e4 + 1):(taskid*1e4), nrep, replace = FALSE); p
 
 infr <- sapply(1:nrep, function (b) {
   print(b)
-  SNsurvyBayes (dat = popu, transfm = transfms, mod, smpl.n, num.knots = 15, n.iter = 6e3, n.chains = 3, seed = c(seeds[b], 1), percentiles = c(0.05, 0.1, 0.25, 0.5, 0.75, 0.9, 0.95), doSample = TRUE, doFigure = (b == 1)*plot.popu )
+  SNsurvyBayes (dat = popu,
+                transfm = transfms,
+                mod,
+                smpl.n,
+                num.knots = 15,
+                n.iter = 6e3,
+                n.chains = 3,
+                seed = c(seeds[b], 1),
+                percentiles = c(0.05, 0.1, 0.25, 0.5, 0.75, 0.9, 0.95),
+                doSample = TRUE,
+                doFigure = (b == 1)*plot.popu )
 }, simplify = 'array')
 
 size.ty 
