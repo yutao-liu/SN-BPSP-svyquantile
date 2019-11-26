@@ -3,6 +3,8 @@
 #
 # Author: Yutao Liu
 #
+# Date: 08/21/2017
+#
 # R version: 3.3.2
 ###########################################################
 
@@ -15,7 +17,8 @@ pacman::p_load(pps)
 ## distr = c('SkewN', 'Gamma', 'LogNorm')
 ## trans = c('none', 'log', 'sqrt')
 
-SimSurvyPopu <- function (N, n, size.ty, distr, assoc, xi = NULL, alpha = NULL, sigma = NULL, gamma = NULL, trans = NULL, doFigure = FALSE, seed) {
+SimSurvyPopu <- function (N, n, size.ty, distr, assoc, xi = NULL, alpha = NULL, sigma = NULL, gamma = NULL, trans = NULL,
+                          doFigure = FALSE, seed) {
   
   set.seed(seed)
   
