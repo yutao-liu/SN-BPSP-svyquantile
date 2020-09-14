@@ -1,12 +1,5 @@
-# Skew-Normal Bayesian Penalized Spline Model-Based Survey Inference
+# Skew-Normal Bayesian Penalized-Spline Regression Models
 
-The code files conduct simulation studies evaluating the methods proposed in the paper
+The Stan code implement the skew-normal penalized-spline regression models in the following paper
 
-Liu, Y., Chen, Q. (2019). Bayesian Inference of Finite Population Quantiles for Skewed Survey Data Using Skew-Normal Penalized Spline Regression. \emph{Journal of Survey Statistics and Methodology}.
-
-
-* SimSurvyPopu.R: simulate the survey populations for PPS sampling
-
-* SN-BPSPsurvy.R: fit Bayesian model-based methods proposed in the paper
-
-* SN-BPSP-Sim.R: repeated simulation studies with parallel tasks
+Liu, Y., Chen, Q. (2020). \href{https://doi.org/10.1093/jssam/smz016}{Bayesian inference of finite population quantiles for skewed survey data using skew-normal penalized-spline regression, \emph{Journal of Survey Statistics and Methodology}, \textbf{8}, 792–816.}
